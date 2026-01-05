@@ -1,0 +1,323 @@
+/* 全局样式：噗噗主题基础（暖黄+浅棕+奶白） */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Comic Sans MS", "幼圆", sans-serif; /* 可爱字体 */
+}
+
+body {
+  background-color: #fff9e6; /* 奶黄色背景，呼应噗噗色调 */
+  color: #6d5a36; /* 浅棕文字，柔和不刺眼 */
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 顶部导航：软萌圆角+渐变 */
+header {
+  background: linear-gradient(135deg, #ffd66b 0%, #ffc850 100%); /* 噗噗黄渐变 */
+  padding: 15px 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 3px 10px rgba(255, 200, 80, 0.3);
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+.logo i {
+  margin-right: 8px;
+  transform: rotate(15deg); /* 图标轻微倾斜，更可爱 */
+}
+
+nav ul {
+  list-style: none;
+  float: right;
+}
+nav ul li {
+  display: inline-block;
+  margin-left: 25px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover {
+  background-color: #fff;
+  color: #ffc850;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 横幅区域：软萌氛围 */
+.banner {
+  background: url("images/噗噗-bg.png") no-repeat center; /* 可以加噗噗背景图（可选） */
+  background-size: cover;
+  padding: 60px 0;
+  text-align: center;
+  margin: 20px 0;
+  border-radius: 20px;
+  background-color: #fff5d9;
+}
+.banner h2 {
+  font-size: 32px;
+  color: #ff8a3d;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(255, 200, 80, 0.5);
+}
+.banner p {
+  font-size: 18px;
+  color: #6d5a36;
+}
+
+/* 板块标题：噗噗元素点缀 */
+.section {
+  margin: 40px 0;
+}
+.section-title {
+  font-size: 26px;
+  color: #ff8a3d;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+.section-title i {
+  margin-right: 10px;
+  font-size: 28px;
+  color: #ffc850;
+}
+
+/* 生活照片区：圆角+软阴影 */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.photo-item {
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(255, 200, 80, 0.2);
+  transition: transform 0.3s ease;
+}
+.photo-item:hover {
+  transform: translateY(-5px);
+}
+.photo-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.photo-item p {
+  padding: 15px;
+  font-size: 15px;
+  color: #6d5a36;
+}
+
+/* 喜欢的明星区：优化排版，适配分栏 */
+.star-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.star-card {
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(255, 200, 80, 0.2);
+  display: flex;
+  flex-direction: column; /* 卡片内先展示图片再展示文字 */
+  width: 100%; /* 占满分栏宽度 */
+  padding: 15px;
+  gap: 15px;
+}
+/* 明星卡片内的多图排版 */
+.star-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 图片3列排列 */
+  gap: 8px;
+}
+/* 明星卡片内的图片样式（原代码中的部分） */
+.star-photos img {
+  width: 100%; /* 保持占满父容器宽度（不用改） */
+  height: 100px; /* 把原来的80px改成100px（数值越大，图片越高） */
+  object-fit: cover; /* 保持图片比例，避免拉伸 */
+  border-radius: 10px;
+}
+.star-info h3 {
+  font-size: 22px;
+  color: #ff8a3d;
+  margin-bottom: 8px;
+}
+.star-info .works {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #998665;
+}
+
+/* 影视综艺区：适配分栏，排版更清晰 */
+.show-list {
+  display: grid;
+  grid-template-columns: 1fr; /* 单列展示，占满分栏宽度 */
+  gap: 20px;
+}
+.show-card {
+  background-color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(255, 200, 80, 0.2);
+  padding-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+.show-card:hover {
+  transform: translateY(-5px);
+}
+
+.show-card img {
+  width: 100%; /* 保持占满父容器宽度（不用改） */
+  height: 200px; /* 把原来的180px改成200px（数值越大，图片越高） */
+  object-fit: cover; /* 保持图片比例 */
+}
+.show-card h3 {
+  padding: 0 15px;
+  font-size: 18px;
+  color: #ff8a3d;
+  margin: 10px 0 5px;
+}
+.show-card .type {
+  padding: 0 15px;
+  font-size: 13px;
+  color: #998665;
+  margin-bottom: 8px;
+}
+.show-card p {
+  padding: 0 15px;
+  font-size: 14px;
+  color: #6d5a36;
+}
+
+/* 页脚：暖色调收尾 */
+footer {
+  background: linear-gradient(135deg, #ffc850 0%, #ffd66b 100%);
+  color: #fff;
+  padding: 40px 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: 50px;
+}
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+.footer-info h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+.footer-links h4,
+.footer-social h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.footer-links ul {
+  list-style: none;
+}
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-links ul li a:hover {
+  color: #fff5d9;
+}
+.social-icons a {
+  color: #fff;
+  font-size: 22px;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 14px;
+}
+
+/* 图片预览弹窗样式 */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+}
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.close-modal:hover {
+  color: #ffc850;
+}
+
+/* 加载动画样式 */
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff9e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ffd66b;
+  border-top: 5px solid #ff8a3d;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
